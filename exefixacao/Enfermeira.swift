@@ -27,6 +27,25 @@ class Enfermeira{
         print("Plantão: \(plantao ? "Sim" : "Não")")
     }
     
+    func injetarMedicamento(paciente:String, medicamento:String){
+        print("Aplicando o medicando:\(medicamento) no paciente \(paciente)")
+    }
     
+    func servirAlimento(hora:Int, paciente:String)->String{
+        var msg:String = ""
+        if hora >= 11 && hora <= 13 {
+            msg = "Servir almoço para paciente \(paciente)"
+        } else if hora >= 18 && hora <= 20 {
+            msg = "Servir jantar para paciente \(paciente)"
+        }
+        return msg
+    }
     
+    func contarComprimidos(medicamento:String)->Int{
+        if medicamento == "Omeprazol" {
+            return 2
+        } else {
+            return 1
+        }
+    }
 }
